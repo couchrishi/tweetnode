@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tweetnode
+  name: tweetnode-deployment
   labels:
     app: tweetnode
 spec:
