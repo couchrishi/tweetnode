@@ -37,7 +37,7 @@ deploy:
           password: $API_USER_TOKEN
           repository: $TENANCY_NAME/$REPO_NAME/$APP_NAME
           registry: $PRIVATE_REGISTRY_PATH 
-          tag: ${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT},latest
+          tag: latest
   
       - bash-template:
           cwd: $WERCKER_ROOT/kubernetes/
