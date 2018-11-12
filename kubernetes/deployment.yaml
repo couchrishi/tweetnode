@@ -1,1 +1,19 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tweetnode
+  labels:
+    app: tweetnode
+spec:
+  template:
+    metadata:
+      labels:
+        app: tweetnode
+        env: prod
+        tier: web
+    spec:
+      containers:
+      - name: tweetnode
+        image: $TENANCY_NAME/$REPO_NAME/$APP_NAME:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+        ports:
+        - containerPort: 8181
