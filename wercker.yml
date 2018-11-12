@@ -1,8 +1,5 @@
 box:
  id: node:latest
- ports:
-   - "8118"
-
 dev:
   steps:
     - npm-install
