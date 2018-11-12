@@ -51,7 +51,7 @@ deploy:
             echo "Docker image and tag:"
             echo "${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}"
             
-     - kubectl:
+      - kubectl:
          server: $KUBE_ENDPOINT
          token: $KUBE_USER_TOKEN
          insecure-skip-tls-verify: true
