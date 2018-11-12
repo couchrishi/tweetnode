@@ -1,8 +1,6 @@
 box: 
   id: punix/tweetimage:latest
-  ports: 
-    - "8181"
- 
+  
 dev:
   steps:
     - npm-install
