@@ -12,6 +12,8 @@ spec:
         env: prod
         tier: web
     spec:
+      imagePullSecrets:
+      - name: ocir-credentials
       containers:
       - name: tweetnode
         image: $PRIVATE_REGISTRY_PATH/$TENANCY_NAME/$REPO_NAME/$APP_NAME:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
