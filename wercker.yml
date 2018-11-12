@@ -38,3 +38,11 @@ docker-build:
          repository: $TENANCY_NAME/$REPO_NAME/$APP_NAME
          registry: $PRIVATE_REGISTRY_PATH 
          tag: ${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT},latest
+
+deploy:
+  steps:
+     - kubectl:
+         server: $KUBE_ENDPOINT
+         token: $KUBE_USER_TOKEN
+         insecure-skip-tls-verify: true
+         command: create -f .
