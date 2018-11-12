@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tweetnode-svc
+  labels:
+    app: tweetnode
+spec:
+  selector:
+    app: tweetnode
+    tier: web
+    env: prod
+  ports:
+  - port: 8181
+    targetPort: 8181
+  type: NodePort
