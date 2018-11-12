@@ -52,19 +52,19 @@ deploy:
             echo "${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}"
             
       - kubectl:
-        server: $KUBE_ENDPOINT
-        token: $KUBE_USER_TOKEN
-        insecure-skip-tls-verify: true
-        cwd: $WERCKER_ROOT/kubernetes/
-        command: delete secret $OCIR_SECRET_NAME
- 
-       - kubectl:
-        server: $KUBE_ENDPOINT
-        token: $KUBE_USER_TOKEN
-        insecure-skip-tls-verify: true
-        cwd: $WERCKER_ROOT/kubernetes/
-        command: secret docker-registry ocir-credentials --docker-server=$PRIVATE_REGISTRY_PATH --docker-username=$CONTAINER_REGISTRY_USERNAME --docker-password=$API_TOKEN --docker-email=saibalaji.rajaraman@outlook.com 
-        
+         server: $KUBE_ENDPOINT
+         token: $KUBE_USER_TOKEN
+         insecure-skip-tls-verify: true
+         cwd: $WERCKER_ROOT/kubernetes/
+         command: delete secret $OCIR_SECRET_NAME
+
+      - kubectl:
+         server: $KUBE_ENDPOINT
+         token: $KUBE_USER_TOKEN
+         insecure-skip-tls-verify: true
+         cwd: $WERCKER_ROOT/kubernetes/
+         command: secret docker-registry $OCIR_SECRET_NAME --docker-server=$PRIVATE_REGISTRY_PATH --docker-username=$CONTAINER_REGISTRY_USERNAME --docker-password=$API_TOKEN --docker-email=saibalaji.rajaraman@outlook.com 
+
       - kubectl:
          server: $KUBE_ENDPOINT
          token: $KUBE_USER_TOKEN
