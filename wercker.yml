@@ -1,5 +1,5 @@
 box:
- id: node:latest
+ id: punix/tweetimage
 dev:
   steps:
     - npm-install
