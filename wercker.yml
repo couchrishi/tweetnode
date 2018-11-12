@@ -45,4 +45,4 @@ deploy:
          server: $KUBE_ENDPOINT
          token: $KUBE_USER_TOKEN
          insecure-skip-tls-verify: true
-         command: create -f ./kubernetes/.
+         command: apply -f ./kubernetes/.
