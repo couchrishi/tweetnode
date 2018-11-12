@@ -32,7 +32,6 @@ build:
 deploy:
   steps:
       - internal/docker-push:
-          image-name: $APP_NAME
           username: $CONTAINER_REGISTRY_USERNAME
           password: $API_USER_TOKEN
           repository: $TENANCY_NAME/$REPO_NAME/$APP_NAME
