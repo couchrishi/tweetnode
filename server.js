@@ -34,7 +34,6 @@ switch (sectorVar)
 
     default: var watchList = ['Happy Diwali'];
 }
-});
 
 var T = new Twit({
   consumer_key:         'F9W2XZA9Wv26QZp8hIrJtVcgO'
@@ -57,3 +56,4 @@ io.sockets.on('connection', function (socket) {
 
   });
  });
+});
