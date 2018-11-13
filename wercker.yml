@@ -31,6 +31,14 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+ 
+  after-steps:
+    - install-packages:
+        packages: ruby
+    - pasonatquila/pretty-slack-notify@0.3.6:
+        webhook_url: $SLACK_URL
+        channel: $SLACK_CHANNEL
+        
 docker-build:
   # Step to build and push docker image
   steps:
