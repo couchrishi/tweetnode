@@ -82,10 +82,9 @@ deploy:
          insecure-skip-tls-verify: true
          cwd: $WERCKER_ROOT/kubernetes/
          command: apply -f .
-
- after-steps:
-    - install-packages:
-        packages: ruby
-    - pasonatquila/pretty-slack-notify@0.3.6:
-        webhook_url: $SLACK_URL
-        channel: $SLACK_CHANNEL
+  after-steps:
+        - install-packages:
+            packages: ruby
+        - pasonatquila/pretty-slack-notify@0.3.6:
+            webhook_url: $SLACK_URL
+            channel: $SLACK_CHANNEL
