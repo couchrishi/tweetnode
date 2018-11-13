@@ -3,7 +3,8 @@ var express = require('express')
   , http = require('http')
   , server = http.createServer(app)
   ,Twit = require('twit')
-  , io = require('socket.io').listen(server);
+  , io = require('socket.io').listen(server)
+  , url = require('url');
 	
 server.listen(8118);
 
@@ -32,6 +33,8 @@ switch (sectorVar)
     case "loans":
         var watchList = ['loans'];
         break;
+
+    default: var watchList = ['Happy Diwali'];
 }
 
 var T = new Twit({
