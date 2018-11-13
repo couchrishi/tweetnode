@@ -11,8 +11,6 @@ server.listen(8118);
 // routing
 app.get('/', function (req, res) {
 res.sendfile(__dirname + '/index.html');
-});
-
 var sectorVar = url.parse(req.url, true).query['sector'];
 console.log(sectorVar);
 switch (sectorVar)
@@ -36,6 +34,7 @@ switch (sectorVar)
 
     default: var watchList = ['Happy Diwali'];
 }
+});
 
 var T = new Twit({
   consumer_key:         'F9W2XZA9Wv26QZp8hIrJtVcgO'
