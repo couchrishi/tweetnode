@@ -3,7 +3,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
   <script>
 
-        var socket = io.connect('http://localhost:8118');
+        var socket = io.connect('http://129.213.61.151:30463');
         socket.on('stream', function(tweet){
         $('#tweetd').append(tweet+'<br>');
         });
