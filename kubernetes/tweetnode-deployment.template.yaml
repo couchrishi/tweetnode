@@ -17,7 +17,6 @@ spec:
       containers:
       - name: tweetnode
         image: $PRIVATE_REGISTRY_PATH/$TENANCY_NAME/$REPO_NAME/$APP_NAME:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
-        command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
         imagePullPolicy: Always
         ports:
         - containerPort: 8181
