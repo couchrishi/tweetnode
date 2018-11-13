@@ -14,12 +14,12 @@ res.sendfile(__dirname + '/index.html');
 
 var watchList = ['Happy Diwali'];
 var T = new Twit({
-    consumer_key:         'J653fFCFs0e6zVVQ6Iv0g'
-  , consumer_secret:      '9gWMjoU1sdaTng57fpn3kJJLqcYXEPZtUWcTTmv7I'
-  , access_token:         '28950913-t6S1OOYW3TEqOCVdyqqtttguP0a9WPfLkdUqe3diB'
-  , access_token_secret:  'ITLOMomZzFw3WXIEt5ZureboGv0CHzyvAyDdiWcevuDwe'
-})
+  consumer_key:         'F9W2XZA9Wv26QZp8hIrJtVcgO'
+, consumer_secret:      'uZwqHcMFbkZcGisvj9fF3yqIV2PVqiY345ZU1qP9glGzLO6r6H'
+, access_token:         '28950913-9mTpVbIo5XM4rtY6ARjFckKsSXUAH04sTmiy4KVOy'
+, access_token_secret:  'mZPGC5CDwSBtDtcPp72ZfAy5bsR2B9g7hs3LVPLqtR19F'
 
+})
 
 io.sockets.on('connection', function (socket) {
   console.log('Connected');
