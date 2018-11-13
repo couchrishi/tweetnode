@@ -12,7 +12,28 @@ app.get('/', function (req, res) {
 res.sendfile(__dirname + '/index.html');
 });
 
-var watchList = ['Happy Diwali'];
+var sectorVar = url.parse(req.url, true).query['sector'];
+console.log(sectorVar);
+switch (sectorVar)
+
+{
+    case "automobile":
+        var watchList = ['auto loans'];
+        break;
+
+    case "telecom":
+        var watchList = ['telecom offers'];
+        break;
+
+    case "retail":
+        var watchList = ['Retail Offers'];
+        break;
+
+    case "loans":
+        var watchList = ['loans'];
+        break;
+}
+
 var T = new Twit({
   consumer_key:         'F9W2XZA9Wv26QZp8hIrJtVcgO'
 , consumer_secret:      'uZwqHcMFbkZcGisvj9fF3yqIV2PVqiY345ZU1qP9glGzLO6r6H'
