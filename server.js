@@ -39,6 +39,9 @@ switch (sectorVar)
         var watchList = ['loans'];
         res.sendFile(__dirname + '/loan_index.html');
         break;
+
+    default: 
+        var watchList = ['Happy Diwali'];
 }
 
 
