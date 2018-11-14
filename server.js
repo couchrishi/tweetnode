@@ -8,52 +8,64 @@ var express = require('express')
 	
 server.listen(8118);
 
+app.use(express.static('images'));
+
 // routing
 app.get('/', function (req, res) {
-res.sendfile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/index.html');
+  });
+
+app.get('/sector', function(req,res)
+{
+
 var sectorVar = url.parse(req.url, true).query['sector'];
 console.log(sectorVar);
-switch (sectorVar)
 
+switch (sectorVar) 
 {
     case "automobile":
         var watchList = ['auto loans'];
-        break;
-
+        res.sendFile(__dirname + '/auto_index.html');
+		break;
     case "telecom":
         var watchList = ['telecom offers'];
-        break;
-
+        res.sendFile(__dirname + '/telco_index.html');
+		break;
     case "retail":
         var watchList = ['Retail Offers'];
-        break;
-
+        res.sendFile(__dirname + '/retail_index.html');
+		break;
     case "loans":
         var watchList = ['loans'];
+		res.sendFile(__dirname + '/loan_index.html');
         break;
-
-    default: var watchList = ['Happy Diwali'];
 }
 
-var T = new Twit({
-  consumer_key:         'F9W2XZA9Wv26QZp8hIrJtVcgO'
-, consumer_secret:      'uZwqHcMFbkZcGisvj9fF3yqIV2PVqiY345ZU1qP9glGzLO6r6H'
-, access_token:         '28950913-9mTpVbIo5XM4rtY6ARjFckKsSXUAH04sTmiy4KVOy'
-, access_token_secret:  'mZPGC5CDwSBtDtcPp72ZfAy5bsR2B9g7hs3LVPLqtR19F'
 
+console.log(watchList);
+
+ var T = new Twit({
+    consumer_key:         'AS9WAgK5oPP0NfEbAlUNnMXAx'
+  , consumer_secret:      'XitRHP5dCc2BybKNx4oeVVTMgwTfQfbwldiowPIaA8QevjbulS'
+  , access_token:         '28950913-1fPhERjmper8BXqCPtlOejazAOOXrVwgIe4COOBTl'
+  , access_token_secret:  'xKZbxdHJ3g19scSRXlOyk6LuzZfy1oscmU9vff0hoYHwa'
 })
 
-io.sockets.on('connection', function (socket) {
+
+io.sockets.on('connection', function (socket) 
+{
   console.log('Connected');
+  var stream = T.stream('statuses/filter', {track: watchList})
 
-
- var stream = T.stream('statuses/filter', { track: watchList })
-
-  stream.on('tweet', function (tweet) {
-
+  console.log(stream);
+  
+  stream.on('tweet', function (tweet) 
+  {
+    console.log('inside stream function');
     io.sockets.emit('stream',tweet.text);
-
-
+    console.log(tweet.text);
   });
  });
+
+  
 });
