@@ -26,18 +26,18 @@ switch (sectorVar)
     case "automobile":
         var watchList = ['auto loans'];
         res.sendFile(__dirname + '/auto_index.html');
-		break;
+		    break;
     case "telecom":
         var watchList = ['telecom offers'];
         res.sendFile(__dirname + '/telco_index.html');
-		break;
+		    break;
     case "retail":
         var watchList = ['Retail Offers'];
         res.sendFile(__dirname + '/retail_index.html');
-		break;
+		    break;
     case "loans":
         var watchList = ['loans'];
-		res.sendFile(__dirname + '/loan_index.html');
+        res.sendFile(__dirname + '/loan_index.html');
         break;
 }
 
