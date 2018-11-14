@@ -58,7 +58,7 @@ console.log(watchList);
 io.sockets.on('connection', function (socket) 
 {
   console.log('Connected');
-  var stream = T.stream('statuses/filter', {track: watchList})
+  var stream = T.stream('statuses/filter', {track: watchList});
 
   console.log(stream);
   
