@@ -28,7 +28,7 @@
 	
 	<script>
 
-        var socket = io.connect('http://localhost:8118');
+        var socket = io.connect('http://129.213.61.151:30463');
         socket.on('stream', function(tweet)
 		{
 			$('#tweetd').append(tweet+'<div>');
